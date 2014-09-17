@@ -12,7 +12,7 @@ Tema: Tupar Viajes y Turismo.<br><br>
 * Mostrar los Testimonios<br>
 * Ajax: Click al destino, lo carga en un modal con los detalles.<br>
 
-Entrega 2<br>
+* Entrega 2<br>
 * Administrador - Ajax<br>
 * Destinos (ABM)<br>
 * Usuarios (Baja y promover)<br>
