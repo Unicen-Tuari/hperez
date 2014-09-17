@@ -1,9 +1,9 @@
 hperez
 ======
 
-h1Tupar Viajes
+Tupar Viajes
 
-h3Hugo Perez
+Hugo Perez
 Tema: Tupar Viajes y Turismo.<br><br>
 
  Entrega 1<br>
