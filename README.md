@@ -4,7 +4,7 @@ hperez
 Tupar Viajes
 
 Hugo Perez
-Tema: Tupar Viajes y Turismo.
+Tema: Tupar Viajes y Turismo.<br>
 Entrega 1
 Pagina completa (Front end)
 Mostrar los Destinos
