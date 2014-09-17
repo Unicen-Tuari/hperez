@@ -6,8 +6,8 @@ Tupar Viajes
 Hugo Perez
 Tema: Tupar Viajes y Turismo.<br><br>
 
-*  Entrega 1<br>
-*Pagina completa (Front end)<br>
+* Entrega 1<br>
+- Pagina completa (Front end)<br>
 *Mostrar los Destinos<br>
 *Mostrar los Testimonios<br>
 *Ajax: Click al destino, lo carga en un modal con los detalles.<br>
