@@ -1,7 +1,7 @@
 hperez
 ======
 <h2>Hugo Perez<br>
-<h3>Tema:Tupar Viajes y Turismo.<br><br>
+<h3>Tema: Tupar Viajes y Turismo.<br><br>
 
 <h4>Entrega 1:</h4><br>
 * Pagina completa (Front end)<br>
