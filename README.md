@@ -7,14 +7,12 @@ hperez
 <h3>Tema: Tupar Viajes y Turismo.<br><br>
 
 <h4>Entrega 1</h4><br>
-
 * Pagina completa (Front end)<br>
 * Mostrar los Destinos<br>
 * Mostrar los Testimonios<br>
 * Ajax: Click al destino, lo carga en un modal con los detalles.
 
 <h4>Entrega 2</h4><br>
-
 * Administrador - Ajax<br>
 * Destinos (ABM)<br>
 * Usuarios (Baja y promover)<br>
