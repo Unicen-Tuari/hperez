@@ -6,7 +6,7 @@ hperez
 <h2>Hugo Perez<br>
 <h3>Tema: Tupar Viajes y Turismo.<br><br>
 
-<h2>Entrega 1<br>
+<h2>Entrega 1</h2><br>
 
 * Pagina completa (Front end)<br>
 * Mostrar los Destinos<br>
