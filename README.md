@@ -6,14 +6,14 @@ hperez
 <h2>Hugo Perez<br>
 <h3>Tema: Tupar Viajes y Turismo.<br><br>
 
-<h2>Entrega 1</h2><br>
+<h4>Entrega 1</h4><br>
 
 * Pagina completa (Front end)<br>
 * Mostrar los Destinos<br>
 * Mostrar los Testimonios<br>
 * Ajax: Click al destino, lo carga en un modal con los detalles.
 
-<h2>Entrega 2<br>
+<h4>Entrega 2</h4><br>
 
 * Administrador - Ajax<br>
 * Destinos (ABM)<br>
