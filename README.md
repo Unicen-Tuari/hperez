@@ -3,8 +3,8 @@ hperez
 
 <h4>Tupar Viajes
 
-<h3>Hugo Perez<br>
-<h2>Tema: Tupar Viajes y Turismo.<br><br>
+<h2>Hugo Perez<br>
+<h3>Tema: Tupar Viajes y Turismo.<br><br>
 
  Entrega 1<br>
 * Pagina completa (Front end)<br>
