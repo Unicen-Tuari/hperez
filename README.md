@@ -1,23 +1,21 @@
 hperez
 ======
+<h2>Hugo Perez<br>
+<h3>Tema: Tupar Viajes y Turismo.<br><br>
 
-Tupar Viajes
+<h4>Entrega 1:</h4><br>
+* Pagina completa (Front end)<br>
+* Mostrar los Destinos<br>
+* Mostrar los Testimonios<br>
+* Ajax: Click al destino, lo carga en un modal con los detalles.
 
-Hugo Perez
-Tema: Tupar Viajes y Turismo.
-Entrega 1
-Pagina completa (Front end)
-Mostrar los Destinos
-Mostrar los Testimonios
-Ajax: Click al destino, lo carga en un modal con los detalles.
-
-Entrega 2
-Administrador - Ajax
-Destinos (ABM)
-Usuarios (Baja y promover)
-Tipos de Viaje (Luna de Miel, negocios, Pareja, Familia, Soltero, etc.) (ABM)
-Testimonios (Baja)
-Agregar testimonio (Boton en el modal de la ciudad)
-Registro
-Login
+<h4>Entrega 2:</h4><br>
+* Administrador - Ajax<br>
+* Destinos (ABM)<br>
+* Usuarios (Baja y promover)<br>
+* Tipos de Viaje (Luna de Miel, negocios, Pareja, Familia, Soltero, etc.) (ABM)<br>
+* Testimonios (Baja)<br>
+* Agregar testimonio (Boton en el modal de la ciudad)<br>
+* Registro<br>
+* Login
 
