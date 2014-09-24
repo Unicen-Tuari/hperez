@@ -15,21 +15,21 @@
                         {if $smarty.foreach.img.iteration == 1}
                         <div class="carousel-inner">
                           <div class="item active">
-                            <img src="{$imagen.path}" alt="..." class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <img src="{$imagen.path}" alt="" class="img-responsive img-thumbnail" width="300px" height="300px">
                             <div class="carousel-caption">
                               <h3>Berlin</h3>
                             </div>
                           </div>
                           {elseif $smarty.foreach.img.iteration == 2}
                           <div class="item">
-                            <img src="{$imagen.path}" alt="..." class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <img src="{$imagen.path}" alt="" class="img-responsive img-thumbnail" width="300px" height="300px">
                             <div class="carousel-caption">
                               <h3>Berlin</h3>
                             </div>
                           </div>
                           {else}
                           <div class="item">
-                            <img src="{$imagen.path}" alt="..."class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <img src="{$imagen.path}" alt=""class="img-responsive img-thumbnail" width="300px" height="300px">
                             <div class="carousel-caption">
                               <h3>Berlin</h3>
                             </div>

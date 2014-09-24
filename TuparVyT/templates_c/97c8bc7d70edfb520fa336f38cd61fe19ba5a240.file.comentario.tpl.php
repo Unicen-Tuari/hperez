@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 20:57:45
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 21:28:30
          compiled from "./templates/comentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:935602893542308c61e4914-32350852%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c8bc7d70edfb520fa336f38cd61fe19ba5a240' => 
     array (
       0 => './templates/comentario.tpl',
-      1 => 1411585059,
+      1 => 1411585093,
       2 => 'file',
     ),
   ),
