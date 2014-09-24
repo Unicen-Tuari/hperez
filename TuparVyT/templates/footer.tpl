@@ -18,5 +18,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/SmoothPageScrolling.js"></script>
+    <script src="js/detalle_ciudad.js"></script>
+    <script src="js/comentario_ciudad.js"></script>
   </body>
   </html>

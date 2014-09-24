@@ -1,23 +1,92 @@
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-                    {foreach from=$Ciudad item=ciudad}
-                    <div class="col-sm- text-center">
-                      <p>Lugar:{$ciudad.nombre_ciudad}</p><br>
-                      <p>Precio:{$ciudad.precio}</p><br>
-                      <p>Duracion:{$ciudad.duracion}</p><br>
-                    </div>
-                    {/foreach}
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  <!-- CAROUSEL-->
+                  <div class="row">
+                    {foreach $Imagen as $imagen name=img}
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
 
+                        <!-- Wrapper for slides -->
+                        {if $smarty.foreach.img.iteration == 1}
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <img src="{$imagen.path}" alt="..." class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <div class="carousel-caption">
+                              <h3>Berlin</h3>
+                            </div>
+                          </div>
+                          {elseif $smarty.foreach.img.iteration == 2}
+                          <div class="item">
+                            <img src="{$imagen.path}" alt="..." class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <div class="carousel-caption">
+                              <h3>Berlin</h3>
+                            </div>
+                          </div>
+                          {else}
+                          <div class="item">
+                            <img src="{$imagen.path}" alt="..."class="img-responsive img-thumbnail" width="300px" height="300px">
+                            <div class="carousel-caption">
+                              <h3>Berlin</h3>
+                            </div>
+                          </div>
+                        </div>
+                        {/if}
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                          <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                          <span class="icon-next"></span>
+                        </a>
+                      </div>
+                    </div>
+                    {/foreach}                    
+                  </div>
+                  <!-- FIN CAROUSEL-->
+
+                  <!-- DATOS CIUDAD-->
+                  {foreach from=$Ciudad item=ciudad}      
+                  <div class="row">                                    
+                    <div class="col-lg-4  text-center">                      
+                      <h3>Lugar<h3><h4>{$ciudad.nombre_ciudad}</h4>
+                      </div>
+                      <div class="col-lg-4  text-center">
+                        <h3>Precio</h3><h4>{$ciudad.precio}</h4>
+                      </div>
+                      <div class="col-lg-4  text-center">
+                        <h3>Duracion</h3><h4>{$ciudad.duracion}</h4>
+                      </div>
+                  </div>
+                      <!-- FIN DATOS CIUDAD-->                  
+
+                      <!-- COMENTARIOS-->                  
+                      <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                          <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                              {foreach from =$Comentario item=comentario}
+                              <button type="button" class="btn btn-primary" onClick="getComentarioCiudad({$ciudad.id_ciudad})">
+                                <span class="badge pull-right">{$comentario.comentarios}</span>
+                                Ver Comentarios&nbsp;
+                              </button>
+                              {/foreach}
+                            </li><br><br>
+                          </ul>
+                          </div>
+                        </div>
+                      {/foreach}
+                      <div class="row">
+                      <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                          <div id="comentario"></div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                      </div>
+                      <!-- FIN COMENTARIOS-->                  

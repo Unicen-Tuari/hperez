@@ -5731,6 +5731,7 @@ button.close {
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
+
   line-height: 1;
 }
 .carousel-inner > .active,
@@ -6219,4 +6220,8 @@ button.close {
     -o-transform : scale(1.1); /* Opera */
     -ms-transform : scale(1.1); /* IE9 */
     opacity: 1;
+  }
+
+  .k{
+    font-color:black; 
   }

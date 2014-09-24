@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-23 01:47:21
+<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 19:36:16
          compiled from "./templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11170143915419df466eb559-80047184%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '62ef71fa9bffee4b2e45ea97bf20c2caac4cf263' => 
     array (
       0 => './templates/home.tpl',
-      1 => 1411426410,
+      1 => 1411569712,
       2 => 'file',
     ),
   ),
@@ -105,27 +105,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <form class="form-horizontal" ACTION="" METHOD="POST">        
             <fieldset>
               <div class="form-group">
-                <div class="col-lg-8"></div>
-                <div class="col-lg-4">
+                <div class="col-lg-7"></div>
+                <div class="col-lg-5">
                 <label>Registrate y comenta nuestros destinos.</label>
                   <input type="text" class="form-control" id="inputPassword" placeholder="Nombre" name="nombre" required>
                 </div>
               </div>
               <div class="form-group">
-              <div class="col-lg-8"></div>
-                <div class="col-lg-4">
+              <div class="col-lg-7"></div>
+                <div class="col-lg-5">
                   <input type="text" class="form-control" id="inputPassword" placeholder="Mail" name="mail" required>
                 </div>
               </div>
               <div class="form-group">
-              <div class="col-lg-8"></div>
-                <div class="col-lg-4">
+              <div class="col-lg-7"></div>
+                <div class="col-lg-5">
                   <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass" required>
                 </div>
               </div>
 
             <div class="form-group">
-              <div class="col-lg-8"></div>
+              <div class="col-lg-7"></div>
               <div class="col-lg-1">
               <button type="submit" data-toggle="tooltip" data-placement="left" title="Registrate" class="zoom btn btn-success btn-md"><i class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
                 
@@ -133,7 +133,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
           </fieldset>
         </form><br><br>
-        <!--FIN FORM PARA REGISTRARSE -->
 
             <div class="mastfoot">
             <div class="inner">
@@ -187,29 +186,48 @@ $_smarty_tpl->tpl_vars['empresa']->_loop = true;
           <?php } ?>
         </div><br><br><br><br><br><br><br><br>
 
+
+        <!-- Modal con Ajax-->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="myModalLabel">Detalles del paquete turistico</h3>
+              </div>
+              <div class="modal-body">
+               <div id="contenidomodal"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Modal con Ajax-->
+
         <!-- Three columns of text below the carousel -->
         <div class="row ">
-            <h2 id="paquetes">Paquetes</h2><br><br>
-            <?php  $_smarty_tpl->tpl_vars['ciudad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ciudad']->_loop = false;
+          <h2 id="paquetes">Paquetes</h2><br><br>
+          <?php  $_smarty_tpl->tpl_vars['ciudad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ciudad']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['Ciudades']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['ciudad']->key => $_smarty_tpl->tpl_vars['ciudad']->value){
 $_smarty_tpl->tpl_vars['ciudad']->_loop = true;
 ?>
           <div class="col-lg-4 col-sm-6 col-xs-12 ">
             <a href="">
-             <img src="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['path'];?>
+            <img src="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['path'];?>
 " class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 ">
            </a>
-           <p>
-            <h3><?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
+           <h3><?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 </h3>
-            <a class="btn btn-primary "  data-toggle="modal" data-target=".bs-example-modal-lg" role="button" href="javascript:getDetalleCiudad(<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['id_ciudad'];?>
-)">Ver mas &raquo;</a>
-          </p>
-         </div>
-         <?php } ?>
-         <!-- /.col-lg-4 -->
+
+        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad(<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['id_ciudad'];?>
+)">Ver mas &raquo;</button>
+        </div>
+        <?php } ?>
+        <!-- /.col-lg-4 -->
        </div><br><br><br><br><br><br><br><br><!-- /.row -->
 
        <div class="row">
