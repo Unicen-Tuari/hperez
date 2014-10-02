@@ -1,24 +1,25 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-09-24 21:33:38
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-02 17:26:51
          compiled from "./templates/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11170143915419df466eb559-80047184%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:936389164542b0a0e965c58-34212797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '62ef71fa9bffee4b2e45ea97bf20c2caac4cf263' => 
     array (
       0 => './templates/home.tpl',
-      1 => 1411587216,
+      1 => 1412263264,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11170143915419df466eb559-80047184',
+  'nocache_hash' => '936389164542b0a0e965c58-34212797',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5419df46881c82_06520704',
+  'unifunc' => 'content_542b0a0ea9d2e1_27618312',
   'variables' => 
   array (
+    'Mail' => 0,
     'Empresa' => 0,
     'empresa' => 0,
     'Ciudades' => 0,
@@ -26,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5419df46881c82_06520704')) {function content_5419df46881c82_06520704($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_542b0a0ea9d2e1_27618312')) {function content_542b0a0ea9d2e1_27618312($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
     <body>
       <div id="top" class="site-wrapper">
@@ -35,19 +36,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
           <div class="cover-container ">
 
-            <div class=" masthead clearfix ">
+            <div class="masthead clearfix ">
               <div class="inner ">
                 <h3 class="masthead-brand"></h3>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#empresa">Acerca</a></li>
+                <ul class=" nav masthead-nav">
+                  <li class="active"><a href="#top">Home</a></li>
+                  <li><a href="#empresa">Acerca</a></li>
                   <li><a href="#paquetes">Paquetes</a></li>
                   <li><a href="#contacto">Contacto</a></li>
-                  
                   <li><a href=""></a></li>
-                  <li><p class="lead">
+                  <li><p class="lead" data-toggle="tooltip" data-placement="left" title="Iniciar sesion">
                     <a class="zoom btn btn-primary btn-md" data-toggle="modal" data-target="#myModal"><i class="fa fa-user fa-1x"></i>&nbsp;</a>
-                    </p>
+                  </p>
                   </li>
+                  <?php if (isset($_smarty_tpl->tpl_vars['Mail']->value)){?>
+                  <h4><strong>Conectado como:</strong><p class="text-success"><?php echo $_smarty_tpl->tpl_vars['Mail']->value;?>
+</p></h4> 
+                           
+                  <button id="logout" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Salir">
+              <span class="glyphicon glyphicon-log-out">&nbsp&nbsp</span>
+            </button>
+                  <?php }?>
+
                 </ul>
               </div>
             </div>
@@ -65,25 +75,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                       <h4 class="modal-title" id="myModalLabel">Inicia sesion</h4>
                     </div>
                     <div class="modal-body">
-                      <form class="form-horizontal" ACTION="" METHOD="POST">        
+                      <form id="formlog" class="form-horizontal" method="POST">        
                         <fieldset>
                           <div class="form-group">
                             <div class="col-lg-3"></div>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="inputPassword" placeholder="Mail" name="correo"required>
+                              <input type="text" class="form-control" id="inputPassword" placeholder="Mail" name="mail">
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="col-lg-3"></div>
                             <div class="col-lg-6">
-                              <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password"required>
+                              <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass">
                             </div>
                           </div>
 
                           <div class="form-group">
                             <div class="col-lg-3"></div>
                             <div class="col-lg-2">
-                            <button type="submit" data-toggle="tooltip" data-placement="left" title="Iniciar sesion" class="btn btn-primary btn-md btn-block"><i class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
+                            <button  type="submit" data-toggle="tooltip" data-placement="left" title="Iniciar sesion" class="btn btn-primary btn-md btn-block"><i id="signin"class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
 
                             </div>
                           </div>
@@ -97,37 +107,36 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <!-- FIN FORM PARA LOGIN -->
 
           <!--FORM PARA REGISTRARSE -->
-          <form class="form-horizontal" ACTION="" METHOD="POST">        
-            <fieldset>
+          <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 bx zoom">
+          <form  class="form-horizontal" ACTION="" METHOD="POST">        
+            <fieldset >
               <div class="form-group">
-                <div class="col-lg-7"></div>
-                <div class="col-lg-5">
+              <div class="col-lg-12">
                 <label>Registrate y comenta nuestros destinos.</label>
                   <input type="text" class="form-control" id="inputPassword" placeholder="Nombre" name="nombre" required>
-                </div>
+              </div>
               </div>
               <div class="form-group">
-              <div class="col-lg-7"></div>
-                <div class="col-lg-5">
+              <div class="col-lg-12">
                   <input type="text" class="form-control" id="inputPassword" placeholder="Mail" name="mail" required>
-                </div>
+              </div>
               </div>
               <div class="form-group">
-              <div class="col-lg-7"></div>
-                <div class="col-lg-5">
+              <div class="col-lg-12">
                   <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass" required>
-                </div>
               </div>
-
-            <div class="form-group">
-              <div class="col-lg-7"></div>
-              <div class="col-lg-1">
+              </div>
+            <div class="form-group">            
+            <div class="col-lg-1">
               <button type="submit" data-toggle="tooltip" data-placement="left" title="Registrate" class="zoom btn btn-success btn-md"><i class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
-                
-              </div>
+            </div>
             </div>
           </fieldset>
-        </form><br><br>
+        </form>
+        </div><br><br>
+        </div>
 
             <div class="mastfoot">
             <div class="inner">
@@ -136,7 +145,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
               <a href="https://twitter.com"><i class=" zoom fa fa-twitter fa-2x"></i></a>
               &nbsp&nbsp
               <a href="https://youtube.com"><i class=" zoom fa fa-youtube-square fa-2x"></i></a>&nbsp&nbsp
-              <a href="https://instagram.com"><i class="zoom fa fa-instagram fa-2x"></i></a><br><br>
+              <a href="https://instagram.com"><i class="zoom fa fa-instagram fa-2x"></i></a><br>
 
               <a href="#empresa" class="sr-button sr-buttonicon small-iconbutton" title="Back to Top">
               <i class=" zoom fa fa-angle-double-down fa-3x"></i></a>
@@ -194,7 +203,7 @@ $_smarty_tpl->tpl_vars['empresa']->_loop = true;
                <div id="contenidomodal"></div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>
@@ -210,16 +219,20 @@ foreach ($_from as $_smarty_tpl->tpl_vars['ciudad']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['ciudad']->_loop = true;
 ?>
           <div class="col-lg-4 col-sm-6 col-xs-12 ">
-            <a href="">
             <img src="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['path'];?>
 " class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 ">
-           </a>
            <h3><?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 </h3>
 
         <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad(<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['id_ciudad'];?>
 )">Ver mas &raquo;</button>
+        <div >
+        <script>
+        setTimeout(function() {
+            $('#cargando').html("<i class="fa fa-cog fa-spin fa-5x"></i>");     
+        }, 5000);</script>
+        </div>
         </div>
         <?php } ?>
         <!-- /.col-lg-4 -->
@@ -229,7 +242,7 @@ $_smarty_tpl->tpl_vars['ciudad']->_loop = true;
        <h2 id="contacto">Envienos su consulta</h2><br><br>
         <div class="col-lg-8">
         <h4 class="text-center">Estaríamos encantados de proporcionarle con más información ,<br> sólo tiene que llamar , correo electrónico o visítenos</h4><br><br>
-        <form class="form-horizontal" ACTION="" METHOD="POST">        
+        <form class="zoom form-horizontal" ACTION="" METHOD="POST">        
             <fieldset>
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label"

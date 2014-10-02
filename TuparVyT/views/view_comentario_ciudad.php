@@ -1,6 +1,6 @@
 <?php
 require('./libs/Smarty.class.php');
-class View
+class ViewComentarioCiudad
 {
 	public $smarty;   
 
@@ -9,6 +9,10 @@ class View
 		$this->smarty = New Smarty;
 	}
 
+	/*public function MostrarCondicionesDeViaje($condicion){
+		$this->smarty->assign("Condicion",$condicion);				
+	}*/
+	
 	public function MostrarComentario($comentario){
 		$this->smarty->assign("Comentario",$comentario);				
 	}

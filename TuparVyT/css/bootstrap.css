@@ -5442,6 +5442,7 @@ button.close {
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #0480be;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5460,10 +5461,12 @@ button.close {
   padding: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
+ background-color: #0480be;
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;
   margin-left: 5px;
+ 
 }
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
@@ -6225,3 +6228,16 @@ button.close {
   .k{
     font-color:black; 
   }
+
+.bx{
+  border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-color: white;
+    
+}
+
+.cl{
+background-color: black;
+}

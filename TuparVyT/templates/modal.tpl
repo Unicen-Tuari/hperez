@@ -1,6 +1,7 @@
                   <!-- CAROUSEL-->
+                  {foreach from=$Ciudad item=ciudad}
                   <div class="row">
-                    {foreach $Imagen as $imagen name=img}
+                    
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -12,30 +13,20 @@
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        {if $smarty.foreach.img.iteration == 1}
+                        
                         <div class="carousel-inner">
-                          <div class="item active">
+                        {foreach $Imagen as $imagen name=img}
+                        
+                          <div class="item {if $smarty.foreach.img.iteration == 1} active{/if}">
+
                             <img src="{$imagen.path}" alt="" class="img-responsive img-thumbnail" width="300px" height="300px">
                             <div class="carousel-caption">
-                              <h3>Berlin</h3>
+                              <h3>{$ciudad.nombre_ciudad}</h3>
                             </div>
-                          </div>
-                          {elseif $smarty.foreach.img.iteration == 2}
-                          <div class="item">
-                            <img src="{$imagen.path}" alt="" class="img-responsive img-thumbnail" width="300px" height="300px">
-                            <div class="carousel-caption">
-                              <h3>Berlin</h3>
-                            </div>
-                          </div>
-                          {else}
-                          <div class="item">
-                            <img src="{$imagen.path}" alt=""class="img-responsive img-thumbnail" width="300px" height="300px">
-                            <div class="carousel-caption">
-                              <h3>Berlin</h3>
-                            </div>
-                          </div>
+                          </div>                          
+                          {/foreach}   
                         </div>
-                        {/if}
+                        
 
                         <!-- Controls -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -46,12 +37,12 @@
                         </a>
                       </div>
                     </div>
-                    {/foreach}                    
+                                     
                   </div>
                   <!-- FIN CAROUSEL-->
 
                   <!-- DATOS CIUDAD-->
-                  {foreach from=$Ciudad item=ciudad}      
+                        
                   <div class="row">                                    
                     <div class="col-lg-4  text-center">                      
                       <h3>Lugar<h3><h4>{$ciudad.nombre_ciudad}</h4>
@@ -72,10 +63,18 @@
                           <ul class="nav nav-pills nav-stacked">
                             <li class="active">
                               {foreach from =$Comentario item=comentario}
+                              {if $comentario.comentarios== 0}
+                              <small><em>* Esta ciudad no tiene comentarios.<br>
+                              * Si desea dejar su comentario debera registrarse primero.</em>
+                              </small>
+                              {else}  
                               <button type="button" class="btn btn-primary" onClick="getComentarioCiudad({$ciudad.id_ciudad})">
                                 <span class="badge pull-right">{$comentario.comentarios}</span>
-                                Ver Comentarios&nbsp;
-                              </button>
+                                <i class="fa fa-comments fa-2x"></i>&nbsp;
+                              </button><br>
+                              <small><em>
+                              * Si desea dejar su comentario debera registrarse primero.</em></small>
+                              {/if}
                               {/foreach}
                             </li><br><br>
                           </ul>
@@ -89,4 +88,15 @@
                         </div>
                         <div class="col-lg-1"></div>
                       </div>
-                      <!-- FIN COMENTARIOS-->                  
+                      <!-- FIN COMENTARIOS-->
+
+                      <!-- CAROUSEL CICLICO-->                                    
+                      <script type="text/javascript">
+                        $('.carousel').carousel({
+                          interval: 2800
+                        })
+                        $('.carousel').carousel({
+                          pause: "hover"
+                        })
+                      </script>
+                      <!-- FIN CAROUSEL CICLICO-->                                    

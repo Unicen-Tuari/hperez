@@ -1,5 +1,5 @@
 <?php
-class Controller
+class ControllerComentarioCiudad
 {
 	private $model;
 	private $view;
@@ -17,6 +17,7 @@ class Controller
 			$this->view->MostrarComentario($this->model->ObtenerComentarioByIdCiudad($_GET['id_ciudad']));
 		    $this->view->ImprimirComentario();
 		}
+
 	}
 }	
 ?>

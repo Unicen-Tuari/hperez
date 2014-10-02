@@ -1,5 +1,5 @@
 	<?php
-	class Controller
+	class ControllerHome
 	{
 		private $model;
 		private $view;
@@ -10,31 +10,195 @@
 		}
 
 
-		public function ImprimirPagina(){
+		private function ImprimirHome(){
+			{
+				session_start();
+				if(!isset($_SESSION["mail"]))
+				{
+					$this->view->ImprimirHome1();
+				}
+				else
+				{
+					$this->view->ImprimirHome($_SESSION["mail"]);
+				}
+			}
+
+		}
+
+
+		public function Usuario(){
 			
 			//if(array_key_exists('nombre',$_POST)){
 
-				if(isset($_POST['nombre'])){
-					$usuario['nombre'] = $_POST['nombre'] ;
-					$usuario['mail'] = $_POST['mail'] ;
-					$usuario['pass'] = md5($_POST['pass']);
-					$usuario=$this->model->GrabarUsuario($usuario);
-					$this->view->MostrarUsuario($usuario);
+			$empresa=$this->model->ObtenerDescripcionEmpresa();
+			$this->view->MostrarDescripcionEmpresa($empresa);
+			$this->view->MostrarCiudades($this->model->ObtenerCiudades());
+
+			/*if(isset($_POST['nombre'])){
+				$usuario['nombre'] = $_POST['nombre'] ;
+				$usuario['mail'] = $_POST['mail'] ;
+				$usuario['pass'] = md5($_POST['pass']);
+				$usuario=$this->model->GrabarUsuario($usuario);
+				$this->view->MostrarUsuario();
+			}*/
+			if(isset($_SESSION['mail'])){
+				if (isset($_POST['mail'])) {
+					$formulario['mail'] = $_POST['mail'];
+					$formulario['pass'] = md5($_POST['pass']);
+					$this->loginUsuario($formulario);
+
+					//$this->view->ImprimirHome($correo);
 				}
-				elseif (isset($_POST['correo'])) {
-					$usuario['mail'] = $_POST['correo'];
-					$usuario['pass'] = md5($_POST['password']);
-					$this->model->BuscarUsuario($usuario);
+			}
+			else{
+				$this->ImprimirHome();
+			}
+		}
+
+
+		private function loginUsuario($formulario)
+		{
+			$error = $this->verificarFormulario($formulario);
+			if(!$error)
+			{
+				$user = $this->model->BuscarUsuario($formulario["mail"]);
+
+				if(empty($user))
+				{
+					$this->view->MensajeError("Error: Usuario Inexistente");
+				} 	
+				if($user[0]["pass"] != md5($formulario["pass"]))
+				{
+					$this->view->MensajeError("Error: Password Inválida");
 				}
 
-				$empresa=$this->model->ObtenerDescripcionEmpresa();
-				$this->view->MostrarDescripcionEmpresa($empresa);
-				$this->view->MostrarCiudades($this->model->ObtenerCiudades());
-				$this->view->ImprimirHome();
+				session_start();
+				$_SESSION["mail"]=$formulario["mail"];
+				echo "home.php";
+
 			}
-			//else echo "string";
-		//}	
+			else
+			{
+				$this->view->MensajeError($error);
+			}
+
+		}
+
+
+
+		private function verificarFormulario($formulario)
+		{
+			if(!$this->verificaremail($formulario["mail"]))
+				return "Error: Email Inválido";
+			if(strlen($formulario["pass"])==0)
+				return "Error: La password es vacía";
+		}
+
+		private function verificaremail($email){ 
+
+			if(!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) {
+				return false;
+			}
+			else{
+				return true;
+			}
+		}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		/*public function enviarMail(){
 
@@ -61,5 +225,4 @@
 			}*/
 
 
-			
 			?>

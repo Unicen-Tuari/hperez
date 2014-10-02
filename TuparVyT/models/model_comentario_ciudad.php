@@ -1,5 +1,5 @@
 <?php
-class Model
+class ModelComentarioCiudad
 {
 	private $conn;
 
@@ -13,7 +13,7 @@ class Model
 
 	public function ObtenerComentarioByIdCiudad($id_ciudad){
 		
-		$sql = "SELECT u.nombre,c.texto,co.condicion 
+		$sql = "SELECT u.nombre,c.texto,c.id_ciudad,co.condicion 
 		FROM   comentario c
 		JOIN   ciudad ci ON (ci.id_ciudad = c.id_ciudad)
 		JOIN   usuario u ON (u.id_usuario = c.id_usuario)
@@ -23,5 +23,14 @@ class Model
 		$query = $this->conn->query($sql);
 		return $query->fetchAll();
 	}
+
+	/*public function ObtenerCondiciones(){
+		
+		$sql = "SELECT *
+		FROM condicion";
+
+		$query = $this->conn->query($sql);
+		return $query->fetchAll();
+	}*/
 }
 ?>

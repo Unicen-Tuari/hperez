@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//phpinfo();
+include 'reporte_errores.php';
 include './controllers/controller_home.php';
 include './views/view_home.php';
 include './models/model_home.php';
 
-$model = new Model();
-$view = new View();
-$controller = new Controller($model,$view);
-$controller->ImprimirPagina();	
+$model = new ModelHome();
+$view = new ViewHome();
+$controller = new ControllerHome($model,$view);
+$controller->Usuario();	
 //$controller->enviarMail();
 
 ?>
