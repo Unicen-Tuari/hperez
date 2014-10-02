@@ -12,9 +12,8 @@ class ControllerDetalleCiudad
 
 	public function ImprimirModal(){
 	
-		//if(array_key_exists('id_ciudad',$_GET)){
 		if (isset($_GET['id_ciudad'])) {
-			
+
 			$this->view->MostrarDetalleCiudad($this->model->ObtenerDetalleCiudad($_GET['id_ciudad']));
 			$this->view->MostrarImgCiudad($this->model->ObtenerImgByIdCiudad($_GET['id_ciudad']));
 		    $this->view->MostrarContadorComentario($this->model->ObtenerCountComentByIdCiudad($_GET['id_ciudad']));
