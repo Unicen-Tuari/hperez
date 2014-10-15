@@ -24,13 +24,24 @@ class ModelComentarioCiudad
 		return $query->fetchAll();
 	}
 
-	/*public function ObtenerCondiciones(){
+	public function ObtenerCondicion(){
 		
 		$sql = "SELECT *
 		FROM condicion";
 
 		$query = $this->conn->query($sql);
 		return $query->fetchAll();
-	}*/
+	}
+
+
+	public function ObtenerIdCiudad($id_ciudad){
+		
+		$sql = "SELECT id_ciudad		
+		FROM ciudad
+		WHERE id_ciudad = $id_ciudad";
+
+		$query = $this->conn->query($sql);
+		return $query->fetchAll();
+	}
 }
 ?>
