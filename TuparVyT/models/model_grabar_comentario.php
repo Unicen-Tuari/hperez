@@ -14,7 +14,7 @@ class ModelGrabarComentario
 	public function InsertaComentario($comentario){
 
 		$sql = "INSERT INTO `comentario` (`texto`,`id_usuario`, `id_ciudad`, `id_condicion`) 
-		VALUES (:texto,:id_usuario,:id_ciudad,id_condicion)";
+		VALUES (:texto,:id_usuario,:id_ciudad,:id_condicion)";
 
 		$resultado = $this->conn->prepare($sql);
 		$resultado->execute(array(':texto'=>$comentario["texto"],':id_usuario'=>$comentario["id_usuario"],':id_ciudad'=>$comentario["id_ciudad"],':id_condicion'=>$comentario["id_condicion"]));
@@ -24,10 +24,10 @@ class ModelGrabarComentario
 		$resultado=$resultado->fetch(PDO::FETCH_ASSOC);
 	}
 
-	/*public function BuscarComentario($id_ciudad)
+	public function BuscarComentario($id_ciudad)
 	{
 		
-		$sql = "SELECT DISTINCT u.nombre,c.texto,c.id_ciudad,co.condicion 
+		$sql = "SELECT DISTINCT u.nombre,c.texto,c.id_ciudad,co.condicion,c.id_comentario  
 		FROM   comentario c
 		JOIN   ciudad ci ON (ci.id_ciudad = c.id_ciudad)
 		JOIN   usuario u ON (u.id_usuario = c.id_usuario)
@@ -37,7 +37,7 @@ class ModelGrabarComentario
 		
 		$query = $this->conn->query($sql);
 		return $query->fetchAll();
-	}*/
+	}
 	
 }
 ?>

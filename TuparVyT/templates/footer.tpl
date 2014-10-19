@@ -32,7 +32,6 @@
     <script type="text/javascript" src="js/mail.js"></script>
     <script type="text/javascript" src="js/sweet-alert.js"></script>  
     <script type="text/javascript" src="js/jquery.ambiance.js"></script>  
-
     
   </body>
   </html>

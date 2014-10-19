@@ -22,7 +22,7 @@ class ControllerComentarioCiudad
 		}
 
 		if (isset($_SESSION['nombre'])) {
-			$this->view->ImprimirComentarioSesion($_SESSION["nombre"]);	
+			$this->view->ImprimirComentarioSesion($_SESSION["nombre"],$_SESSION["id_usuario"]);	
 		}
 		else{
 			$this->view->ImprimirComentario();	

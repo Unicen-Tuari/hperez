@@ -22,10 +22,10 @@ class ViewComentarioCiudad
 	public function MostrarComentario($comentario){
 		$this->smarty->assign("Comentario",$comentario);				
 	}
-
 	
-	public function ImprimirComentarioSesion($nombre){
+	public function ImprimirComentarioSesion($nombre,$id){
 		$this->smarty->assign("Nombre",$nombre);					
+		$this->smarty->assign("IdUsuario",$id);
 		$this->smarty->display('comentario.tpl');
 
 	}
