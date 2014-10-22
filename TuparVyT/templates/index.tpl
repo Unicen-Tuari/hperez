@@ -207,7 +207,7 @@
        <h2 id="contacto">Envienos su consulta</h2><br><br>
         <div class="col-lg-8">
         <h4 class="text-center">Estaríamos encantados de proporcionarle con más información ,<br> sólo tiene que llamar , correo electrónico o visítenos</h4><br><br>
-        <form class="zoom form-horizontal" ACTION="" METHOD="POST">        
+        <form class="form-horizontal" ACTION="" METHOD="POST">        
             <fieldset>
               <div class="form-group">
                 <label for="inputPassword" class="col-lg-2 control-label"
