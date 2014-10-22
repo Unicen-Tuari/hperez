@@ -1,6 +1,6 @@
 <?php
 require('./libs/Smarty.class.php');
-class ViewHome
+class ViewIndex
 {
 	public $smarty;   
 
@@ -36,8 +36,8 @@ class ViewHome
 
 	}
 
-	public function ImprimirHome(){
-		$this->smarty->display('home.tpl');
+	public function ImprimirIndex(){
+		$this->smarty->display('index.tpl');
 
 	}
 

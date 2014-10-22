@@ -1,5 +1,5 @@
 <?php
-class ModelHome
+class ModelIndex
 {
 	private $conn;
 

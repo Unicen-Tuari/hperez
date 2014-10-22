@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-17 15:21:33
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-21 21:43:48
          compiled from "./templates/comentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1517202957542b255766ba76-28728710%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c8bc7d70edfb520fa336f38cd61fe19ba5a240' => 
     array (
       0 => './templates/comentario.tpl',
-      1 => 1413551015,
+      1 => 1413920581,
       2 => 'file',
     ),
   ),
@@ -86,8 +86,8 @@ $_smarty_tpl->tpl_vars['idciudad']->_loop = true;
                       data:$("#formcrearcomentario").serialize(), 
                       success: function(data)
                       {
+                        $('#contadorcomentario').html(data);
                         $('#comentario').html(data);
-                        
                       }
 
                     });

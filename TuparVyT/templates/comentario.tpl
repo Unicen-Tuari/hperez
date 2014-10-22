@@ -42,8 +42,8 @@
                       data:$("#formcrearcomentario").serialize(), 
                       success: function(data)
                       {
+                        $('#contadorcomentario').html(data);
                         $('#comentario').html(data);
-                        
                       }
 
                     });
