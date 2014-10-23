@@ -1,44 +1,59 @@
 {include file="header.tpl"}
     <body>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+          <a class="navbar-brand">Tupar VyT</a>
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#top">Inicio</a>
+              </li>
+              <li>
+                <a href="#empresa">Acerca</a>
+              </li>
+              <li>
+                <a href="#paquetes">Paquetes</a>
+              </li>
+              <li>
+                <a href="#contacto">Contacto</a>
+              </li>             
+            </ul>
+            <ul class="nav navbar-nav" style="float: right">
+              <li>
+                {if isset($Nombre)} 
+                <p style="display:none" class="lead">
+                  <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
+                </p>
+                <p class="lead navbar-btn pull-right">
+                  <a class="btn btn-primary btn-sm">
+                    <strong >Hola {$Nombre} !</strong>
+                  </a>&nbsp
+                  <button id="logout" class="zoom btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Salir">
+                    <i class="fa fa-power-off"></i>
+                  </button>
+                </p>
+                {else}
+                <p class="lead">
+                  <a class="zoom btn btn-default btn-sm navbar-btn pull-right" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
+                </p>
+
+                {/if}
+              
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
       <div id="top" class="site-wrapper">
 
         <div class="site-wrapper-inner">
 
           <div class="cover-container ">
-
-            <div class="masthead clearfix ">
-              <div class="inner">
-                <h3 class="masthead-brand"></h3>
-                <ul class="nav masthead-nav d ">
-                  <li class="active"><a href="#top">Home</a></li>
-                  <li ><a href="#empresa">Acerca</a></li>
-                  <li><a href="#paquetes">Paquetes</a></li>
-                  <li><a href="#contacto">Contacto</a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li>
-                    {if isset($Nombre)} 
-                    <p style="display:none" class="lead">
-                      <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
-                    </p>
-                    <p class="lead">
-                      <a class="btn btn-primary btn-sm">
-                        <strong>Hola {$Nombre} !</strong>
-                      </a>&nbsp
-                      <button id="logout" class=" zoom btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Salir">
-                        <i class="fa fa-power-off"></i>
-                      </button>
-                    </p>
-                    {else}
-                    <p class="lead">
-                      <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
-                    </p>
-                    {/if}
-                  </li>                  
-                </ul>
-              </div>
-            </div><br>
 
             <div class="inner cover ">
               <h1 class="cover-heading w ">Tupar Viajes y Turismo</h1>
@@ -148,9 +163,8 @@
         </div>
 
       </div><br><br><br><br><br>
-
       <div class="container marketing">
-        <div class="row">
+        <div class="row" >
           <h2 id="empresa">Nuestro servicio</h2><br><br>
           {foreach $Empresa as $empresa name=emp}
           {if $smarty.foreach.emp.iteration !== 4}

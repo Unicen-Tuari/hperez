@@ -5,7 +5,7 @@ $(document).ready(function() {
 			url: "logout.php",
 			success: function(data)
 			{
-				window.location = "home.php";
+				window.location = "index.php";
 			}
 		});
 		

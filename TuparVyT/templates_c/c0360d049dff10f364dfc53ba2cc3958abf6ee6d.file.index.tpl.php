@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-23 01:29:09
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-23 02:27:03
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170233470754483c6f72cf81-30486735%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1414020545,
+      1 => 1414024020,
       2 => 'file',
     ),
   ),
@@ -32,46 +32,61 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_54483c6f8d09e5_26095978')) {function content_54483c6f8d09e5_26095978($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
     <body>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+          <a class="navbar-brand">Tupar VyT</a>
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#top">Inicio</a>
+              </li>
+              <li>
+                <a href="#empresa">Acerca</a>
+              </li>
+              <li>
+                <a href="#paquetes">Paquetes</a>
+              </li>
+              <li>
+                <a href="#contacto">Contacto</a>
+              </li>             
+            </ul>
+            <ul class="nav navbar-nav" style="float: right">
+              <li>
+                <?php if (isset($_smarty_tpl->tpl_vars['Nombre']->value)){?> 
+                <p style="display:none" class="lead">
+                  <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
+                </p>
+                <p class="lead navbar-btn pull-right">
+                  <a class="btn btn-primary btn-sm">
+                    <strong >Hola <?php echo $_smarty_tpl->tpl_vars['Nombre']->value;?>
+ !</strong>
+                  </a>&nbsp
+                  <button id="logout" class="zoom btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Salir">
+                    <i class="fa fa-power-off"></i>
+                  </button>
+                </p>
+                <?php }else{ ?>
+                <p class="lead">
+                  <a class="zoom btn btn-default btn-sm navbar-btn pull-right" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
+                </p>
+
+                <?php }?>
+              
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
       <div id="top" class="site-wrapper">
 
         <div class="site-wrapper-inner">
 
           <div class="cover-container ">
-
-            <div class="masthead clearfix ">
-              <div class="inner">
-                <h3 class="masthead-brand"></h3>
-                <ul class="nav masthead-nav d ">
-                  <li class="active"><a href="#top">Home</a></li>
-                  <li ><a href="#empresa">Acerca</a></li>
-                  <li><a href="#paquetes">Paquetes</a></li>
-                  <li><a href="#contacto">Contacto</a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li>
-                    <?php if (isset($_smarty_tpl->tpl_vars['Nombre']->value)){?> 
-                    <p style="display:none" class="lead">
-                      <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
-                    </p>
-                    <p class="lead">
-                      <a class="btn btn-primary btn-sm">
-                        <strong>Hola <?php echo $_smarty_tpl->tpl_vars['Nombre']->value;?>
- !</strong>
-                      </a>&nbsp
-                      <button id="logout" class=" zoom btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Salir">
-                        <i class="fa fa-power-off"></i>
-                      </button>
-                    </p>
-                    <?php }else{ ?>
-                    <p class="lead">
-                      <a class="zoom btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><strong>Inicia sesion</strong></a>
-                    </p>
-                    <?php }?>
-                  </li>                  
-                </ul>
-              </div>
-            </div><br>
 
             <div class="inner cover ">
               <h1 class="cover-heading w ">Tupar Viajes y Turismo</h1>
@@ -185,9 +200,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
 
       </div><br><br><br><br><br>
-
       <div class="container marketing">
-        <div class="row">
+        <div class="row" >
           <h2 id="empresa">Nuestro servicio</h2><br><br>
           <?php  $_smarty_tpl->tpl_vars['empresa'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['empresa']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['Empresa']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
