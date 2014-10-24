@@ -1,5 +1,6 @@
 {include file="header.tpl"}
     <body>
+
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -206,16 +207,23 @@
         <!-- Three columns of text below the carousel -->
         <div class="row ">
           <h2 id="paquetes">Paquetes</h2><br><br>
-          {foreach from=$Ciudades item=ciudad}
-          <div class="col-lg-4 col-sm-6 col-xs-12 ">
-            <img src="{$ciudad.path}" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="{$ciudad.nombre_ciudad}">
-           <h3>{$ciudad.nombre_ciudad}</h3>
+          {foreach from = $Ciudades item=ciudad}
 
-        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad({$ciudad.id_ciudad})">Ver mas &raquo;</button>
-        </div>
+          <div class="col-lg-4 col-sm-6 col-xs-12 ">
+            <img src="{$ciudad.path}"  alt="" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="{$ciudad.nombre_ciudad}">
+            <h3>{$ciudad.nombre_ciudad}</h3>
+
+            <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad({$ciudad.id_ciudad})">Ver mas &raquo;</button>
+          </div>   
         {/foreach}
+        {foreach from=$City item=city}
+        <div class="col-lg-4 col-sm-6 col-xs-12 ">
+          <img src="img/222.gif"  alt="" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="{$city.nombre_ciudad}">
+          <h3>{$city.nombre_ciudad}</h3>
+        </div>  
+      {/foreach}
         <!-- /.col-lg-4 -->
-       </div><br><br><br><br><br><br><br><br><!-- /.row -->
+       </div><br><br><br><br><br><!-- /.row -->
 
        <div class="row">
        <h2 id="contacto">Envienos su consulta</h2><br><br>
@@ -243,8 +251,10 @@
                 
               </div>
             </div>
-          </fieldset>
+          </fieldset>          
         </form>
+
+
                
         </div><br>
         <div class="row">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-23 02:27:03
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-24 19:26:06
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170233470754483c6f72cf81-30486735%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1414024020,
+      1 => 1414171563,
       2 => 'file',
     ),
   ),
@@ -26,12 +26,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'empresa' => 0,
     'Ciudades' => 0,
     'ciudad' => 0,
+    'City' => 0,
+    'city' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54483c6f8d09e5_26095978')) {function content_54483c6f8d09e5_26095978($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
     <body>
+
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -260,19 +263,32 @@ $_smarty_tpl->tpl_vars['empresa']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['ciudad']->key => $_smarty_tpl->tpl_vars['ciudad']->value){
 $_smarty_tpl->tpl_vars['ciudad']->_loop = true;
 ?>
+
           <div class="col-lg-4 col-sm-6 col-xs-12 ">
             <img src="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['path'];?>
-" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
+"  alt="" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 ">
-           <h3><?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
+            <h3><?php echo $_smarty_tpl->tpl_vars['ciudad']->value['nombre_ciudad'];?>
 </h3>
 
-        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad(<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['id_ciudad'];?>
+            <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onClick="getDetalleCiudad(<?php echo $_smarty_tpl->tpl_vars['ciudad']->value['id_ciudad'];?>
 )">Ver mas &raquo;</button>
-        </div>
+          </div>   
         <?php } ?>
+        <?php  $_smarty_tpl->tpl_vars['city'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['city']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['City']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['city']->key => $_smarty_tpl->tpl_vars['city']->value){
+$_smarty_tpl->tpl_vars['city']->_loop = true;
+?>
+        <div class="col-lg-4 col-sm-6 col-xs-12 ">
+          <img src="img/222.gif"  alt="" class="img-rounded img-responsive zoom"  data-toggle="tooltip" data-placement="left" title="<?php echo $_smarty_tpl->tpl_vars['city']->value['nombre_ciudad'];?>
+">
+          <h3><?php echo $_smarty_tpl->tpl_vars['city']->value['nombre_ciudad'];?>
+</h3>
+        </div>  
+      <?php } ?>
         <!-- /.col-lg-4 -->
-       </div><br><br><br><br><br><br><br><br><!-- /.row -->
+       </div><br><br><br><br><br><!-- /.row -->
 
        <div class="row">
        <h2 id="contacto">Envienos su consulta</h2><br><br>
@@ -300,8 +316,10 @@ $_smarty_tpl->tpl_vars['ciudad']->_loop = true;
                 
               </div>
             </div>
-          </fieldset>
+          </fieldset>          
         </form>
+
+
                
         </div><br>
         <div class="row">

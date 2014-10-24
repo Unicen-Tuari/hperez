@@ -13,8 +13,11 @@ class ViewIndex
 		$this->smarty->assign("Empresa",$empresa);				
 	}
 
-	public function MostrarCiudades($ciudades){
+	public function MostrarCiudadesConImagenes($ciudades){
 		$this->smarty->assign("Ciudades",$ciudades);				
+	}
+	public function MostrarCiudades($city){
+		$this->smarty->assign("City",$city);				
 	}
 
 	public function MensajeErrorUsuario($errorusuario){

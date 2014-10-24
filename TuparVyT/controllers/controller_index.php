@@ -51,7 +51,10 @@
 
 			$empresa=$this->model->ObtenerDescripcionEmpresa();
 			$this->view->MostrarDescripcionEmpresa($empresa);
+
+			$this->view->MostrarCiudadesConImagenes($this->model->ObtenerCiudadesConImg());
 			$this->view->MostrarCiudades($this->model->ObtenerCiudades());
+			
 
 			$this->view->ImprimirIndex();
 
