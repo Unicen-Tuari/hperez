@@ -47,7 +47,7 @@
                       <h3>Lugar<h3><h4>{$ciudad.nombre_ciudad}</h4>
                       </div>
                       <div class="col-lg-4  text-center">
-                        <h3>Precio</h3><h4>{$ciudad.precio}</h4>
+                        <h3>Precio</h3><h4>$&nbsp;{$ciudad.precio}</h4>
                       </div>
                       <div class="col-lg-4  text-center">
                         <h3>Duracion</h3><h4>{$ciudad.duracion}</h4>
@@ -61,38 +61,15 @@
                         <div class="col-lg-6">
                           <ul class="nav nav-pills nav-stacked">
                             <li class="active">
-                              {foreach from =$Comentario item=comentario}
-                                {if $comentario.comentarios == 0}
-                                    <button type="button" class="btn btn-primary" onClick="getComentarioCiudad({$ciudad.id_ciudad})">
-                                      <span class="badge pull-right">
-                                          <div id="contadorcomentario">           
-                                          {$comentario.comentarios}
-                                          </div>
-                                      </span>
-                                      <i class="fa fa-comments fa-2x"></i>&nbsp;
-                                    </button><br>
-                                    <small>
-                                      <em>* Esta ciudad no tiene comentarios.</em><br>
-                                      {if !isset($Nombre)}
-                                        <em>* Si desea dejar su comentario debera   registrarse primero.
-                                        </em>
-                                      {/if}
-                                    </small>
-                                {else}  
-                                    <button type="button" class="btn btn-primary" onClick="getComentarioCiudad({$ciudad.id_ciudad})">
-                                      <span class="badge pull-right">
-                                          {$comentario.comentarios}
-                                      </span>
-                                      <i class="fa fa-comments fa-2x"></i>&nbsp;
-                                    </button><br>
-                                    <small>
-                                    {if !isset($Nombre)}
-                                      <em>* Si desea dejar su comentario debera registrarse primero.
-                                      </em>
-                                    {/if}
-                                    </small>
+                              <button type="button" class="btn btn-primary" onClick="getComentarioCiudad({$ciudad.id_ciudad})">
+                              <i class="fa fa-comments fa-3x"></i>&nbsp;
+                              </button><br>
+                              <small>
+                                {if !isset($Nombre)}
+                                <em>* Si desea dejar su comentario debera   registrarse primero.
+                                </em>
                                 {/if}
-                              {/foreach}
+                              </small>
                             </li><br><br>
                           </ul>
                           </div>
