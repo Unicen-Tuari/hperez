@@ -1,6 +1,6 @@
                   {if isset($Nombre)}
                   <!-- FORM COMENTARIO-->
-                  <div id="formnuevo">
+
                   <form id="formcrearcomentario" class="form-horizontal" method="POST">        
                     <div class="jumbotron">
                       <h4>Deja tu comentario</h4><br>
@@ -45,7 +45,7 @@
                             success: function(data)
                             {
 
-                              $('#formnuevo').html(data);                      
+                              $('#templateformcomentactualizado').html(data);                      
                             }
 
                           });
@@ -77,7 +77,7 @@
                         </address>
 
                         <hr>
-                      </div>
+
 
                       <!-- LISTADO DE COMENTARIOS-->
 

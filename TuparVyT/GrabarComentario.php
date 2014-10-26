@@ -8,7 +8,6 @@ $model = new ModelGrabarComentario();
 $view = new ViewGrabarComentario();
 $controller = new ControllerGrabarComentario($model,$view);
 
-//$controller->GrabarComentario();
 $controller->ImprimirComentario();	
 ?>
 
