@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-26 21:52:48
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-28 00:10:10
          compiled from "./templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:524262176544d438e1ef657-64879903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a4f6f0d327fc7bc3ea86f63906a1bf934ca50c7' => 
     array (
       0 => './templates/footer.tpl',
-      1 => 1414356764,
+      1 => 1414451173,
       2 => 'file',
     ),
   ),
@@ -55,6 +55,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script type="text/javascript" src="js/sweet-alert.js"></script>  
     <script type="text/javascript" src="js/jquery.ambiance.js"></script>  
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script type="text/javascript" src="js/maps.js"></script>      
+    <script type="text/javascript" src="js/maps.js"></script>  
 </body>
 </html><?php }} ?>

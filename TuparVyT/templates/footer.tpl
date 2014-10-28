@@ -34,6 +34,6 @@
     <script type="text/javascript" src="js/sweet-alert.js"></script>  
     <script type="text/javascript" src="js/jquery.ambiance.js"></script>  
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script type="text/javascript" src="js/maps.js"></script>      
+    <script type="text/javascript" src="js/maps.js"></script>  
 </body>
 </html>
