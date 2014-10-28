@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-28 14:01:55
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-28 14:11:12
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:364074710544d438dead5c7-63538012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1414501308,
+      1 => 1414501386,
       2 => 'file',
     ),
   ),
@@ -104,12 +104,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                       <h4 class="modal-title" id="myModalLabel">Tu sueño hecha realidad...</h4>
                     </div>
                     <div class="modal-body">
-
                       <div class="span8">
                         <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
                           <iframe src="//www.youtube.com/embed/4puZ4IfaKSM?autoplay=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-
                       </div>
                     </div>
                   </div>
