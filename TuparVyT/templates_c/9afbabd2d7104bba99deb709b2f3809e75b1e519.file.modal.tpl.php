@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-28 01:47:58
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-28 13:12:25
          compiled from "./templates/modal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1478133041544d43951fdd86-28686305%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9afbabd2d7104bba99deb709b2f3809e75b1e519' => 
     array (
       0 => './templates/modal.tpl',
-      1 => 1414457272,
+      1 => 1414457298,
       2 => 'file',
     ),
   ),
@@ -47,7 +47,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['imagen']->_loop = true;
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['img']['iteration']++;
 ?>
-                          <li data-target="#carousel-example-generic" data-slide-to="" class="<?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['img']['iteration']==1){?>active<?php }?>"></li>
+                          <li data-target="#carousel-example-generic" data-slide-to="0" class="<?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['img']['iteration']==1){?>active<?php }?>"></li>
                           <?php } ?>   
                         </ol>
 

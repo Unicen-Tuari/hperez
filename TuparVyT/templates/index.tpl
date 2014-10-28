@@ -69,12 +69,10 @@
                       <h4 class="modal-title" id="myModalLabel">Tu sueño hecha realidad...</h4>
                     </div>
                     <div class="modal-body">
-
                       <div class="span8">
                         <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-                          <iframe src="//www.youtube.com/embed/4puZ4IfaKSM" frameborder="0" allowfullscreen></iframe>
+                          <iframe src="//www.youtube.com/embed/4puZ4IfaKSM?autoplay=1" frameborder="0" allowfullscreen></iframe>
                         </div>
-
                       </div>
                     </div>
                   </div>
