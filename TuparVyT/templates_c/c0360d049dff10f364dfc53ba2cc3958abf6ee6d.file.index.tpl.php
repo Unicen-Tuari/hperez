@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-31 18:55:08
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-31 19:31:43
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:364074710544d438dead5c7-63538012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1414778045,
+      1 => 1414780201,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'Nombre' => 0,
-    'ErrorUsuario' => 0,
-    'ErrorPass' => 0,
     'Empresa' => 0,
     'empresa' => 0,
     'Ciudades' => 0,
@@ -87,116 +85,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="cover-container ">
         <div class="inner cover ">
           <h1 class="cover-heading w ">Tupar Viajes y Turismo</h1>
-          <!-- Modal de video -->
-          <i style="cursor:pointer;" class="fa fa-play-circle fa-5x zoom" data-toggle="modal" data-target=".bs-example-modal-lg1"></i>
-          <div class="modal fade bs-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Tu sueño hecha realidad...</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="span8">
-                    <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-                      <iframe src="//www.youtube.com/embed/4puZ4IfaKSM?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin Modal de video -->
-          <!-- FORM PARA LOGIN -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Inicia sesion</h4>
-                </div>
-                <div class="modal-body">
-                  <form class="form-horizontal" method="POST">
-                    <fieldset>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-6">
-                          <input type="text" class="form-control" id="mail" placeholder="Mail" name="mail">
-                          <?php if (isset($_smarty_tpl->tpl_vars['ErrorUsuario']->value)){?>
-                          <strong class="error"><?php echo $_smarty_tpl->tpl_vars['ErrorUsuario']->value;?>
-</strong>
-                          <?php }else{ ?>
-                          <strong style="display:none" class="error"><?php echo $_smarty_tpl->tpl_vars['ErrorUsuario']->value;?>
-</strong>
-                          <?php }?>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-6">
-                          <input type="password" class="form-control" id="pass" placeholder="Password" name="pass">
-                          <?php if (isset($_smarty_tpl->tpl_vars['ErrorPass']->value)){?>
-                          <strong class="error"><?php echo $_smarty_tpl->tpl_vars['ErrorPass']->value;?>
-</strong>
-                          <?php }else{ ?>
-                          <strong style="display:none" class="error"><?php echo $_smarty_tpl->tpl_vars['ErrorPass']->value;?>
-</strong>
-                          <?php }?>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-2">
-                          <button id="iniciar" type="submit" data-toggle="tooltip" data-placement="left" title="Iniciar sesion" class="btn btn-primary btn-md btn-block"><i id="signin"class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><br>
-        <!-- FIN FORM PARA LOGIN -->
-        <?php if (isset($_smarty_tpl->tpl_vars['Nombre']->value)){?>
-        <?php echo $_smarty_tpl->getSubTemplate ("formregistrodeshabilitado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+          
+          <!-- MODAL CON VIDEO DE YOUTUBE -->
+          <?php echo $_smarty_tpl->getSubTemplate ("modalvideo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-        <?php }else{ ?>
-        <!--FORM PARA REGISTRARSE -->
-        <div class="row">
-          <div class="col-lg-4"></div>
-          <div id="divform" class="col-lg-4 bx zoom">
-            <form id="formregistrarse" class="form-horizontal" ACTION="" METHOD="POST">
-              <fieldset >
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <label>Registrate y comenta nuestros destinos.</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <input type="text" class="form-control" id="email" placeholder="Mail" name="mail" >
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="pass">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-1">
-                    <button id="registrarse" type="submit" data-toggle="tooltip" data-placement="left" title="Registrate" class="zoom btn btn-default btn-md"><i class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
-                  </div><br><br>
-                  <small>¿Ya tienes una cuenta?
-                  </small>
-                  <a style="cursor:pointer"class="zoom" data-toggle="modal" data-target="#myModal"><strong>&nbsp;Inicia sesion</strong></a>
-                </div>
-              </fieldset>
-            </form>
-          </div><br><br>
-        </div>
-        <?php }?>
+          <!-- MODAL CON VIDEO DE YOUTUBE -->
+
+          <!-- FORM PARA LOGIN -->
+          <?php echo $_smarty_tpl->getSubTemplate ("formlogin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+          <!-- FIN FORM PARA LOGIN -->
+
+          <?php if (isset($_smarty_tpl->tpl_vars['Nombre']->value)){?>
+            <!-- FORM DESHABILITADO PARA REGISTRO -->
+            <?php echo $_smarty_tpl->getSubTemplate ("formregistrodeshabilitado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+            <!-- FIN FORM DESHABILITADO PARA REGISTRO -->
+          <?php }else{ ?>
+            <!-- FIN FORM HABILITADO PARA REGISTRO -->
+            <?php echo $_smarty_tpl->getSubTemplate ("formregistro.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+            <!-- FIN FORM HABILITADO PARA REGISTRO -->
+          <?php }?>
         <div class="mastfoot">
           <div class="inner">
             <p><a href="http://fb.com"><i class="zoom fa fa-facebook fa-2x"></i></a>
@@ -244,24 +154,12 @@ $_smarty_tpl->tpl_vars['empresa']->_loop = true;
         <?php }?>
         <?php } ?>
       </div><br><br><br><br><br><br><br><br>
-      <!-- Modal con Ajax-->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content ">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h3 class="modal-title" id="myModalLabel">Detalles del paquete turistico</h3>
-            </div>
-            <div class="modal-body">
-              <div id="contenidomodal"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin Modal con Ajax-->
+      
+      <!-- MODAL CON AJAX-->
+      <?php echo $_smarty_tpl->getSubTemplate ("modalajax.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+      <!-- FIN MODAL CON AJAX-->
+      
       <!-- Three columns of text below the carousel -->
       <div>
         <div class="row ">

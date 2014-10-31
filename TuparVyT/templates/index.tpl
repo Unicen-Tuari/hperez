@@ -52,111 +52,24 @@
       <div class="cover-container ">
         <div class="inner cover ">
           <h1 class="cover-heading w ">Tupar Viajes y Turismo</h1>
-          <!-- Modal de video -->
-          <i style="cursor:pointer;" class="fa fa-play-circle fa-5x zoom" data-toggle="modal" data-target=".bs-example-modal-lg1"></i>
-          <div class="modal fade bs-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Tu sueño hecha realidad...</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="span8">
-                    <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
-                      <iframe src="//www.youtube.com/embed/4puZ4IfaKSM?autoplay=1" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fin Modal de video -->
+          
+          <!-- MODAL CON VIDEO DE YOUTUBE -->
+          {include file="modalvideo.tpl"}
+          <!-- MODAL CON VIDEO DE YOUTUBE -->
+
           <!-- FORM PARA LOGIN -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Inicia sesion</h4>
-                </div>
-                <div class="modal-body">
-                  <form class="form-horizontal" method="POST">
-                    <fieldset>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-6">
-                          <input type="text" class="form-control" id="mail" placeholder="Mail" name="mail">
-                          {if isset($ErrorUsuario)}
-                          <strong class="error">{$ErrorUsuario}</strong>
-                          {else}
-                          <strong style="display:none" class="error">{$ErrorUsuario}</strong>
-                          {/if}
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-6">
-                          <input type="password" class="form-control" id="pass" placeholder="Password" name="pass">
-                          {if isset($ErrorPass)}
-                          <strong class="error">{$ErrorPass}</strong>
-                          {else}
-                          <strong style="display:none" class="error">{$ErrorPass}</strong>
-                          {/if}
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="col-lg-3"></div>
-                        <div class="col-lg-2">
-                          <button id="iniciar" type="submit" data-toggle="tooltip" data-placement="left" title="Iniciar sesion" class="btn btn-primary btn-md btn-block"><i id="signin"class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><br>
-        <!-- FIN FORM PARA LOGIN -->
-        {if isset($Nombre)}
-        {include file = "formregistrodeshabilitado.tpl"}
-        {else}
-        <!--FORM PARA REGISTRARSE -->
-        <div class="row">
-          <div class="col-lg-4"></div>
-          <div id="divform" class="col-lg-4 bx zoom">
-            <form id="formregistrarse" class="form-horizontal" ACTION="" METHOD="POST">
-              <fieldset >
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <label>Registrate y comenta nuestros destinos.</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <input type="text" class="form-control" id="email" placeholder="Mail" name="mail" >
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-12">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="pass">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-1">
-                    <button id="registrarse" type="submit" data-toggle="tooltip" data-placement="left" title="Registrate" class="zoom btn btn-default btn-md"><i class="fa fa-sign-in fa-2x"></i>&nbsp;</button>
-                  </div><br><br>
-                  <small>¿Ya tienes una cuenta?
-                  </small>
-                  <a style="cursor:pointer"class="zoom" data-toggle="modal" data-target="#myModal"><strong>&nbsp;Inicia sesion</strong></a>
-                </div>
-              </fieldset>
-            </form>
-          </div><br><br>
-        </div>
-        {/if}
+          {include file="formlogin.tpl"}
+          <!-- FIN FORM PARA LOGIN -->
+
+          {if isset($Nombre)}
+            <!-- FORM DESHABILITADO PARA REGISTRO -->
+            {include file = "formregistrodeshabilitado.tpl"}
+            <!-- FIN FORM DESHABILITADO PARA REGISTRO -->
+          {else}
+            <!-- FIN FORM HABILITADO PARA REGISTRO -->
+            {include file = "formregistro.tpl"}
+            <!-- FIN FORM HABILITADO PARA REGISTRO -->
+          {/if}
         <div class="mastfoot">
           <div class="inner">
             <p><a href="http://fb.com"><i class="zoom fa fa-facebook fa-2x"></i></a>
@@ -192,24 +105,11 @@
         {/if}
         {/foreach}
       </div><br><br><br><br><br><br><br><br>
-      <!-- Modal con Ajax-->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content ">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h3 class="modal-title" id="myModalLabel">Detalles del paquete turistico</h3>
-            </div>
-            <div class="modal-body">
-              <div id="contenidomodal"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin Modal con Ajax-->
+      
+      <!-- MODAL CON AJAX-->
+      {include file = "modalajax.tpl"}
+      <!-- FIN MODAL CON AJAX-->
+      
       <!-- Three columns of text below the carousel -->
       <div>
         <div class="row ">
