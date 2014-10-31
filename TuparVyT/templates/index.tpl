@@ -119,6 +119,9 @@
           </div>
         </div><br>
         <!-- FIN FORM PARA LOGIN -->
+        {if isset($Nombre)}
+        {include file = "formregistrodeshabilitado.tpl"}
+        {else}
         <!--FORM PARA REGISTRARSE -->
         <div class="row">
           <div class="col-lg-4"></div>
@@ -153,6 +156,7 @@
             </form>
           </div><br><br>
         </div>
+        {/if}
         <div class="mastfoot">
           <div class="inner">
             <p><a href="http://fb.com"><i class="zoom fa fa-facebook fa-2x"></i></a>
@@ -229,7 +233,7 @@
           <h2 id="contacto">Envienos su consulta</h2><br><br>
           <div class="col-lg-8">
             <h4 class="text-center">Estaríamos encantados de proporcionarle con más información ,<br> sólo tiene que llamar , correo electrónico o visítenos</h4><br><br>
-            <div id="divform2" class="zoom">
+            <div id="divform2">
             <form class=" form-horizontal" ACTION="" METHOD="POST">
               <fieldset>
                 <div class="form-group">

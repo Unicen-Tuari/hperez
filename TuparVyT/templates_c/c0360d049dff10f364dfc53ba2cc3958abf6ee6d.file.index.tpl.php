@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-31 16:23:43
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-31 18:55:08
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:364074710544d438dead5c7-63538012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1414769013,
+      1 => 1414778045,
       2 => 'file',
     ),
   ),
@@ -158,6 +158,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           </div>
         </div><br>
         <!-- FIN FORM PARA LOGIN -->
+        <?php if (isset($_smarty_tpl->tpl_vars['Nombre']->value)){?>
+        <?php echo $_smarty_tpl->getSubTemplate ("formregistrodeshabilitado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+        <?php }else{ ?>
         <!--FORM PARA REGISTRARSE -->
         <div class="row">
           <div class="col-lg-4"></div>
@@ -177,7 +181,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
                 <div class="form-group">
                   <div class="col-lg-12">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="pass" disabled>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="pass">
                   </div>
                 </div>
                 <div class="form-group">
@@ -192,6 +196,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </form>
           </div><br><br>
         </div>
+        <?php }?>
         <div class="mastfoot">
           <div class="inner">
             <p><a href="http://fb.com"><i class="zoom fa fa-facebook fa-2x"></i></a>
@@ -294,7 +299,7 @@ $_smarty_tpl->tpl_vars['city']->_loop = true;
           <h2 id="contacto">Envienos su consulta</h2><br><br>
           <div class="col-lg-8">
             <h4 class="text-center">Estaríamos encantados de proporcionarle con más información ,<br> sólo tiene que llamar , correo electrónico o visítenos</h4><br><br>
-            <div id="divform2" class="zoom">
+            <div id="divform2">
             <form class=" form-horizontal" ACTION="" METHOD="POST">
               <fieldset>
                 <div class="form-group">

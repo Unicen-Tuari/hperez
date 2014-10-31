@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$("input").keypress(function(){
 		
 		$( "#divform" ).addClass( "zoomkeypress" );
-		$( "#divform2" ).addClass( "zoomkeypress" );
+	    //$( "#divform2" ).addClass( "zoomkeypress" );
 
 	});
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
 		}
 	});
 
-
+/*
 	$('#asunto').keypress(function(){
 		if($.trim($('#asunto').val()) == '')
 			//if($.trim($('#mensaje').val()) == '')
@@ -24,6 +24,7 @@ $(document).ready(function(){
 			$( "#divform2" ).addClass( "zoom" );
 		}
 	});
+*/
 });
 
 
