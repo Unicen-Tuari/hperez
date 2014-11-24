@@ -36,7 +36,6 @@ $(document).ready(function() {
 				type: "error"});
 			return false;
 		}
-		
 
 		if($("#password").val().length == 0)  {  
 			$.ambiance({message: "La contraseña es obligatoria",
@@ -46,8 +45,8 @@ $(document).ready(function() {
 			return false;  
 		} 
 
-		if($("#password").val().length < 5)  {  
-			$.ambiance({message: "Contraseña insegura.<br>Debe contener mas de 5 caracteres.",
+		if($("#password").val().length < 6)  {  
+			$.ambiance({message: "Contraseña debil.Ingrese una nuevamente.",
 				title: "Error !",
 				timeout: 2,
 				type: "error"});
@@ -56,20 +55,6 @@ $(document).ready(function() {
 
 
 	});
-
-/*$("#formregistrarse").submit(function()
-{
-	$.ajax({
-		type: "POST",
-		data:$("#formregistrarse").serialize(),
-		success: function(data)
-		{
-			$(":text,:password").val('');
-			
-		}
-	});
-	return false;
-});*/
 });
 
 
